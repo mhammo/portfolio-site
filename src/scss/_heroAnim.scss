@@ -1,0 +1,79 @@
+
+
+.hero__animation {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero__animline {
+    stroke: white;
+    fill: none;
+    stroke-width: .25px;
+  }
+
+  .hero__animtag {
+    fill: white;
+    font-size: 5px;
+  }
+  
+  .hero__animblock {  
+    // mix-blend-mode: exclusion;    
+    fill-opacity: 0.6;
+    stroke-width: 0;
+    stroke-opacity: 0.7;
+
+    &.hero__animblock--1 {
+        fill: $color-1;
+        stroke: $color-1;
+    }
+
+    &.hero__animblock--2 {
+        fill: $color-2;
+        stroke: $color-2;
+    }
+
+    &.hero__animblock--3 {
+        fill: $color-3;
+        stroke: $color-3;
+    }
+  }
+}
+
+.hero__titles {
+  flex: 1 1;
+  align-self: center;
+  text-align: center;
+  display: flex;
+  flex-flow: column; 
+
+  .hero__title {
+    opacity: 0;
+    white-space: nowrap;
+    margin: .5em auto;
+    letter-spacing: .1em;
+    padding-right: .1em;
+  }
+
+  .hero__title--cursor {
+    border-right: .05em solid white;
+    animation: 
+      blink-caret .75s step-end infinite;
+  }
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+}

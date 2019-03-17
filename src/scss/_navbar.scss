@@ -1,0 +1,26 @@
+.menu--navbar {
+    z-index: 104;
+    position: absolute;
+    width: 100%;
+    display: inline-flex;
+
+    .menu--navbar-container {
+        border-bottom: white solid 2px;
+        margin: 25px 85px 0 85px;
+        display: inline-flex;
+        flex: 1 1;
+
+        .menu-navbar-right {
+            flex: 1 1;
+            justify-self: flex-end;
+            display: inline-flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            a {
+                margin: 0 1em;
+            }
+        }
+    }
+    
+}

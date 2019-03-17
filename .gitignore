@@ -1,0 +1,7 @@
+node_modules/
+*.css
+dist/main-client.js
+dist/main-client.js.map
+dist/main-client.bundle.css
+dist/main-client.bundle.css.map
+dist/*.woff2

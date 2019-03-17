@@ -1,0 +1,80 @@
+/* Colours */
+
+$color-primary: #161424;
+$color-1: rgb(31, 153, 58);
+$color-2: rgb(12, 122, 173);
+$color-3: rgb(105, 36, 161);
+$color-4: rgb(45, 182, 152);
+$color-5: rgb(182, 95, 45);
+
+@import 'scss/navbar';
+@import 'scss/heroAnim';
+@import 'scss/flex';
+@import 'scss/projects';
+@import 'scss/skillset';
+
+/* Typography */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+div {
+  box-sizing: border-box;
+}
+
+
+  html, body {
+    line-height: 1.333333333;
+    background-color: $color-primary;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;;
+    margin: 0;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+.navbar {
+  background: $color-primary;
+  height: 100px;
+  width: 100%;
+  display: flex;
+}
+
+.section {
+  width: 1200px;
+  display: flex;
+  flex-flow: row;
+  margin: 2em auto;
+
+  &.section__hero {
+    height: 100vh;
+    width: 100%;
+  }
+  
+  &.section__sectors { 
+    min-height: 800px;
+  }
+}
+
+.section__hero {
+  flex-flow: row-reverse;
+}
+
+.section__header {
+  margin: 1em 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .section {
+    width: auto;
+    margin: 2em 1em;
+  } 
+}
+
+

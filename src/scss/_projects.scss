@@ -1,0 +1,150 @@
+.project {
+  padding: 1em;
+  flex: 1 1 0;  
+  transition: all .3s;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;  
+
+  &.project--green {
+    background: $color-1;
+    border: $color-1 solid 0em;
+    &:hover {
+      background: $color-primary;
+      border: $color-1 solid 1.5em;
+
+      .project__logo__golab__text--alt {
+        fill: #26a2c8;
+      }
+    }
+  }
+
+  &.project--blue {
+    background: $color-2;
+    border: $color-2 solid 0em;
+    &:hover {
+      background: $color-primary;
+      border-width: 1.5em;
+    }
+  }
+
+  &.project--purple {
+    background: $color-3;
+    border: $color-3 solid 0em;
+    &:hover {
+      background: $color-primary;
+      border: $color-3 solid 1.5em;
+    }
+  }
+}
+
+.project__image {
+  height: 100px;
+  margin: 2em;
+  max-width: 100%;
+}
+
+.project__subheader {
+  align-self: center;
+  margin: 0 auto;
+  letter-spacing: .2em;
+}
+
+.project__skillset {
+  color: white; 
+  font-weight: bold;
+  align-self: center;
+  margin-top:2em;
+
+  &.project__skillset--green {
+    color: lighten($color-1, 15);
+  }
+  &.project__skillset--blue {
+    color: lighten($color-2, 25);
+  }
+  &.project__skillset--purple {
+    color: darken($color-3, 5);
+  }
+}
+
+.project__sunburst__section {
+  fill: none;
+  stroke-width: 1;
+  stroke: white;  
+  transition: all .3s;
+}
+
+.project__sunburst__svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.project__sunburst__box {
+  position: relative;
+  margin: 2em auto;
+}
+
+.project__sunburst {
+  &:hover {    
+
+    .project__sunburst__section--green {
+      stroke: $color-1;
+    }
+    .project__sunburst__section--blue {
+      stroke: $color-2;
+    }
+    .project__sunburst__section--purple {
+      stroke: $color-3;
+    }
+    .project__sunburst__section--turquoise {
+      stroke: $color-4;
+    }
+    .project__sunburst__section--orange {
+      stroke: $color-5;
+    }
+  }
+}
+
+.project__logo--erasmus {
+  width: 430px;
+  height: 60px;
+  align-self: center;
+  margin: 0 auto;  
+}
+
+@media screen and (max-width: 1200px) {
+  .project__logo--erasmus {
+    width: 350px;
+    height: 45px;
+  } 
+}
+
+@media screen and (max-width: 760px) {
+  .project__logo--erasmus {
+    width: 260px;
+    height: 35px;
+  } 
+
+  .project--sunburst {
+    min-height: 500px;
+  }
+}
+
+.project__logo--golab {
+  margin: 2em 4em;
+}
+
+.project__logo__golab__text {
+  fill: white;
+}
+
+.project__logo__golab__text--alt {
+  transition: fill 0.3s;
+}
+
+
+
