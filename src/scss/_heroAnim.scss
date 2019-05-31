@@ -3,67 +3,55 @@
 .hero__animation {
   flex: 1 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  
+}
 
-  svg {
-    width: 100%;
-    height: 100%;
-  }
+.hero__nav {
+  display: inline-flex;
+  flex-flow: row; 
+  flex: 1 1;
+  justify-content: flex-end;
+  align-self: end;
 
-  .hero__animline {
-    stroke: white;
-    fill: none;
-    stroke-width: .25px;
-  }
-
-  .hero__animtag {
-    fill: white;
-    font-size: 5px;
-  }
-  
-  .hero__animblock {  
-    // mix-blend-mode: exclusion;    
-    fill-opacity: 0.6;
-    stroke-width: 0;
-    stroke-opacity: 0.7;
-
-    &.hero__animblock--1 {
-        fill: $color-1;
-        stroke: $color-1;
-    }
-
-    &.hero__animblock--2 {
-        fill: $color-2;
-        stroke: $color-2;
-    }
-
-    &.hero__animblock--3 {
-        fill: $color-3;
-        stroke: $color-3;
-    }
+  a {
+    font-weight: bold;
+    margin: 0 1em;
   }
 }
 
-.hero__titles {
+.hero__header {
+  display: inline-flex;
+  flex-flow: row; 
   flex: 1 1;
-  align-self: center;
-  text-align: center;
-  display: flex;
-  flex-flow: column; 
+  justify-content: center;
+  margin: 3em 0 1em 0;
+}
 
-  .hero__title {
-    opacity: 0;
-    white-space: nowrap;
-    margin: .5em auto;
-    letter-spacing: .1em;
-    padding-right: .1em;
-  }
+.hero__titles {	 
+  display: flex;	
+  text-align: left;	  
+  font-family: "Open Sans";
+  font-size: 1.2em;
+  flex-flow: column;
+}
 
-  .hero__title--cursor {
-    border-right: .05em solid white;
-    animation: 
-      blink-caret .75s step-end infinite;
+.hero__title {
+  white-space: nowrap;
+  margin: .2em auto;
+  letter-spacing: .05em;
+  padding-left: .5em;
+  padding-right: .1em;
+  height: 1.1em;
+
+  &.hero__title--sub {
+    font-size: .95em;
   }
+}
+
+.hero__title--cursor {
+  border-right: .05em solid white;
+  animation: 
+    blink-caret .75s step-end infinite;
 }
 
 /* The typing effect */
@@ -76,4 +64,71 @@
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: white; }
+}
+
+.hero__scene {
+  width: 80px;
+  height: 80px;
+  padding: 10px;
+}
+
+.hero__anim {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transform-style: preserve-3d;
+  transition: transform 1.5s;      
+}
+
+.hero__anim.cube {      
+  transform: translateZ(-25px) 
+              rotateX( -35deg)
+              rotateY( 45deg);
+}
+
+.hero__section {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transition: all 1.5s;
+}
+
+.hero__section--1  { background: #3D82E9; }
+.hero__section--2   { background: #0B47AE; }
+.hero__section--3   { background: rgb(124, 183, 250); }
+
+.cube {
+  .hero__section--1 { transform: rotateY(  0deg) translateZ(25px); }
+  .hero__section--2 { transform: rotateY(-90deg) translateZ(25px); }
+  .hero__section--3 { transform: rotateX( 90deg) translateZ(25px); }
+
+  &.out {
+    .hero__section {
+      width: 40px;
+      height: 40px;    
+      transition: all .5s;    
+    }
+
+    .hero__section--1 { transform: rotateY(  0deg) translateZ(0px); }
+    .hero__section--2 { transform: rotateY(-90deg) translateZ(40px); }
+    .hero__section--3 { transform: rotateX( 90deg) translateZ(80px); }
+  }
+}
+
+.stack {
+  .hero__section--1 { transform: translateZ(0px) rotate(-45deg) translateY(20%) translateX(-20%); }
+  .hero__section--2 { transform: translateZ(25px) rotate(-45deg) translateY(0%) translateX(0%); }
+  .hero__section--3 { transform: translateZ(50px) rotate(-45deg) translateY(-20%) translateX(20%); }  
+}
+
+.bar {
+  .hero__section--2 { transform: translateZ(0px) translateX(-50%) rotate(0deg) scaleX(0.3); }
+  .hero__section--3 { transform: translateZ(0px) translateX(-10%) translateY(12.5%) rotate(0deg) scaleX(0.3) scaleY(0.75); }
+  .hero__section--1 { transform: translateZ(0px) translateX(30%) translateY(25%) rotate(0deg) scaleX(0.3) scaleY(0.5); }
+  
+  &.out {
+    .hero__section--2 { transform: translateZ(80px) translateX(-75%) translateY(50%) rotate(0deg) scaleX(0.3); }
+    .hero__section--3 { transform: translateZ(-160px) translateX(-10%) translateY(-50%) rotateX( 90deg) scaleX(0.3) scaleY(0.75); }
+    .hero__section--1 { transform: translateZ(240px) translateX(50%) translateY(25%) rotate(0deg) scaleX(0.3) scaleY(0.5); }
+  }
 }

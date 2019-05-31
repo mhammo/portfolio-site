@@ -1,5 +1,5 @@
 import anime from 'animejs';
-import "./main.scss";
+import "./style.scss";
 export { heroAnimation, typewriter };
 
 const heroAnimation = anime.timeline({
@@ -13,18 +13,18 @@ const heroAnimation = anime.timeline({
     console.log(e);
     return [offset + '%', '0%'];
   },
-  duration: 3000
+  duration: 2800
 })
 .add({
   targets: document.querySelectorAll('.hero__animline'),
   strokeDashoffset: [anime.setDashoffset, 0],
   duration: 600
-}, 2800)
+}, 2600)
 .add({
   targets: document.querySelectorAll('.hero__animtag'),
   opacity: [0, 1],
   duration: 400
-}, 3000);
+}, 2800);
 
 const typewriter = (selector, speed) => {
   const e = document.querySelector(selector);

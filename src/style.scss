@@ -1,17 +1,19 @@
 /* Colours */
 
-$color-primary: #161424;
-$color-1: rgb(31, 153, 58);
-$color-2: rgb(12, 122, 173);
-$color-3: rgb(105, 36, 161);
-$color-4: rgb(45, 182, 152);
-$color-5: rgb(182, 95, 45);
+$color-primary: #00144D;
+$color-grey: #ECECEC;
+$color-dark: #131313;
+
+$color-1: #003FAC;
+$color-2: #00144D;
+$color-3: #006FCF;
 
 @import 'scss/navbar';
 @import 'scss/heroAnim';
 @import 'scss/flex';
 @import 'scss/projects';
 @import 'scss/skillset';
+@import 'scss/code-examples';
 
 /* Typography */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
@@ -26,7 +28,7 @@ div {
     line-height: 1.333333333;
     background-color: $color-primary;
     color: #fff;
-    font-family: 'Open Sans', sans-serif;;
+    font-family: 'Montserrat', sans-serif;;
     margin: 0;
   }
 
@@ -47,14 +49,9 @@ div {
 }
 
 .section {
-  width: 1200px;
-  display: flex;
-  flex-flow: row;
-  margin: 2em auto;
-
   &.section__hero {
-    height: 100vh;
     width: 100%;
+    margin-top: 0;    
   }
   
   &.section__sectors { 
@@ -62,16 +59,49 @@ div {
   }
 }
 
+.section__content {
+  width: 1200px;
+  display: flex;
+  flex-flow: row;
+  margin: 2em auto;
+}
+
 .section__hero {
   flex-flow: row-reverse;
 }
 
 .section__header {
-  margin: 1em 0;
+  margin: 1em auto;
+}
+
+.section--grey {
+  background: $color-grey;
+}
+.section--white {
+  background: #fff;
+}
+.section--dark {
+  background: $color-dark;
+}
+
+.section--grey,.section--white {
+  color: black;
+
+  .section__header {
+    color: #004F7A;
+  }
 }
 
 @media screen and (max-width: 1200px) {
-  .section {
+  .section__content {
+    width: auto;
+    margin: 2em 1em;
+  } 
+}
+
+
+@media screen and (max-width: 1200px) {
+  .section__content {
     width: auto;
     margin: 2em 1em;
   } 

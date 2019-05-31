@@ -1,0 +1,57 @@
+using IdentityModel;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
+
+namespace Api.Helpers
+{
+    public static class UserHelper
+    {
+        public static bool AuthenticateForEmail(ClaimsPrincipal user, string email)
+        {            
+            if (email != GetEmail(user))
+            {
+                return IsAdmin(user);
+            }           
+
+            return true;            
+        }
+
+        public static bool AuthenticateForEmail(ClaimsPrincipal user, IList<string> emails)
+        {
+            if (!emails.Contains(GetEmail(user)))
+            {
+                return IsAdmin(user);
+            }
+
+            return true;
+        }
+
+        public static bool IsAdmin(ClaimsPrincipal user)
+        {
+            var roles = GetRoles(user);
+            if (!roles.Contains("Wordpress") && !roles.Contains("Administrator"))
+                return false;
+            else
+                return true;
+        }
+
+        public static string[] GetRoles(ClaimsPrincipal user)
+        {
+            return user.Claims
+                        .Where(c => c.Type == JwtClaimTypes.Role.ToString())
+                        .Select(c => c.Value)
+                        .ToArray();
+            
+        }
+
+        public static string GetEmail(ClaimsPrincipal user)
+        {
+            return user.Claims
+                        .FirstOrDefault(c => c.Type == JwtClaimTypes.Email.ToString())?
+                        .Value;
+        }
+    }
+}

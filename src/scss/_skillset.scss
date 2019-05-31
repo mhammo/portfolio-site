@@ -5,20 +5,18 @@
   margin: 10px;
   justify-content: space-evenly;
   align-content: flex-start;
+  border: white solid 2px;
 }
 
 .skillset--frontend {
-  border: $color-1 solid 1px;
   flex: 2 1;
 }
 
 .skillset--backend {
-  border: $color-2 solid 1px;
   flex: 2 1;
 }
 
 .skillset--database {
-  border: $color-3 solid 1px;
   flex: 1 1;
   justify-content: center;
 }
@@ -50,21 +48,9 @@
   justify-content: space-between;
   flex-direction: column;
   transition: all 0.3s;
-}
-
-.skillset__skill__content--frontend {
-  color: $color-1;
-  border: $color-1 solid 1px;
-}
-
-.skillset__skill__content--backend {
-  color: $color-2;
-  border: $color-2 solid 1px;
-}
-
-.skillset__skill__content--database {
-  color: $color-3;
-  border: $color-3 solid 1px;
+  color: white;
+  border: white solid 2px;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 880px) {
@@ -91,7 +77,7 @@
   }
 }
 
-$skillset-hover-border: black solid 1px;
+$skillset-hover-border: $color-primary solid 1px;
 
 .skillset__borders {
   justify-content: space-between;
@@ -133,17 +119,9 @@ $skillset-hover-border: black solid 1px;
     border-bottom: $skillset-hover-border;
   }
 
-  .skillset__skill__content--frontend {
-    background: $color-1;
+  .skillset__skill__content {
+    background: white;
     color: $color-primary;
   }  
-  .skillset__skill__content--backend {
-    background: $color-2;
-    color: $color-primary;
-  }  
-  .skillset__skill__content--database {
-    background: $color-3;
-    color: $color-primary;
-  }
 }
 

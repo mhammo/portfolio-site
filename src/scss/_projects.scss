@@ -1,3 +1,9 @@
+$color-sunburst-1: rgb(31, 153, 58);
+$color-sunburst-2: rgb(12, 122, 173);
+$color-sunburst-3: rgb(105, 36, 161);
+$color-sunburst-4: rgb(45, 182, 152);
+$color-sunburst-5: rgb(182, 95, 45);
+
 .project {
   padding: 1em;
   flex: 1 1 0;  
@@ -6,12 +12,15 @@
   justify-content: center;
   display: flex;
   flex-direction: column;  
+  color: #fff;
+  box-sizing: border-box;
+  min-height: 320px;
 
   &.project--green {
     background: $color-1;
     border: $color-1 solid 0em;
     &:hover {
-      background: $color-primary;
+      background: $color-dark;
       border: $color-1 solid 1.5em;
 
       .project__logo__golab__text--alt {
@@ -21,10 +30,10 @@
   }
 
   &.project--blue {
-    background: $color-2;
-    border: $color-2 solid 0em;
+    background: #011E71;
+    border: #011E71 solid 0em;
     &:hover {
-      background: $color-primary;
+      background: $color-dark;
       border-width: 1.5em;
     }
   }
@@ -33,15 +42,15 @@
     background: $color-3;
     border: $color-3 solid 0em;
     &:hover {
-      background: $color-primary;
+      background: $color-dark;
       border: $color-3 solid 1.5em;
     }
   }
 }
 
 .project__image {
-  height: 100px;
-  margin: 2em;
+  height: 90px;
+  margin: 2em auto;
   max-width: 100%;
 }
 
@@ -56,16 +65,6 @@
   font-weight: bold;
   align-self: center;
   margin-top:2em;
-
-  &.project__skillset--green {
-    color: lighten($color-1, 15);
-  }
-  &.project__skillset--blue {
-    color: lighten($color-2, 25);
-  }
-  &.project__skillset--purple {
-    color: darken($color-3, 5);
-  }
 }
 
 .project__sunburst__section {
@@ -92,19 +91,19 @@
   &:hover {    
 
     .project__sunburst__section--green {
-      stroke: $color-1;
+      stroke: $color-sunburst-1;
     }
     .project__sunburst__section--blue {
-      stroke: $color-2;
+      stroke: $color-sunburst-2;
     }
     .project__sunburst__section--purple {
-      stroke: $color-3;
+      stroke: $color-sunburst-3;
     }
     .project__sunburst__section--turquoise {
-      stroke: $color-4;
+      stroke: $color-sunburst-4;
     }
     .project__sunburst__section--orange {
-      stroke: $color-5;
+      stroke: $color-sunburst-5;
     }
   }
 }
@@ -129,13 +128,19 @@
     height: 35px;
   } 
 
+  .project__sunburst__box {
+    display: none;
+  }
+
   .project--sunburst {
     min-height: 500px;
   }
 }
 
 .project__logo--golab {
-  margin: 2em 4em;
+  margin: 2em auto;
+  width: 400px;
+  height: 90px;
 }
 
 .project__logo__golab__text {
