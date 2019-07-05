@@ -24,14 +24,14 @@
   flex-flow: row; 
   flex: 1 1;
   justify-content: center;
-  margin: 3em 0 1em 0;
+  margin: 3em 0 2em 0;
 }
 
 .hero__titles {	 
   display: flex;	
   text-align: left;	  
   font-family: "Open Sans";
-  font-size: 1.2em;
+  font-size: 1.4em;
   flex-flow: column;
 }
 
@@ -44,7 +44,7 @@
   height: 1.1em;
 
   &.hero__title--sub {
-    font-size: .95em;
+    font-size: .9em;
   }
 }
 
