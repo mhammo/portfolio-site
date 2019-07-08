@@ -1,0 +1,140 @@
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link href="https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <title>{{ page.title }}</title>
+<body>
+  <section class="section section__hero">
+    <div class="section__content">
+      <div class="flexgrid flexgrid--columns">
+        <div class="hero__nav">
+          <a href="/#code_examples">code examples</a>
+          <a href="/#skills">skills</a>
+          <a href="/#projects">projects</a>
+          <a href="/#contact_me">contact me</a>
+        </div>
+        <div class="hero__header">
+          <div class="hero__scene">
+            <div class="hero__anim cube">
+              <div class="hero__section hero__section--1"></div>
+              <div class="hero__section hero__section--2"></div>
+              <div class="hero__section hero__section--3"></div>
+            </div>
+          </div>
+          <div class="hero__titles">
+            <h2 class="hero__title hero__title--main">Mark Hammond</h2>
+              <h4 class="hero__title hero__title--sub hero__title--cursor"></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ content }}
+  <section class="section section--dark section__footer flexgrid flexgrid--columns">
+    <h3 id="contact_me" class="section__header">Contact Me</h3>
+  </section>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.4/bluebird.min.js"></script>
+<script src="main-client.js"></script>
+<script>
+  var transition = 2000
+
+  function changeToStack() {
+    var cubes = document.querySelectorAll('.hero__anim');
+    [].slice.call(cubes).forEach(function (el) {
+      el.classList.add('out')
+      setTimeout(function () {
+        el.classList.remove('cube')
+        el.classList.remove('out')
+        el.classList.add('stack')
+      }, 500);
+    });
+  }
+
+  function changeToBar() {
+    var cubes = document.querySelectorAll('.hero__anim');
+    [].slice.call(cubes).forEach(function (el) {
+      el.classList.add('out')
+      setTimeout(function () {
+        el.classList.remove('stack')
+        el.classList.remove('out')
+        el.classList.add('bar')
+      }, 500);
+    });
+  }
+
+  function changeToCube() {
+    var cubes = document.querySelectorAll('.hero__anim');
+    [].slice.call(cubes).forEach(function (el) {
+      el.classList.add('out')
+      setTimeout(function () {
+        el.classList.remove('bar')
+        el.classList.remove('out')
+        el.classList.add('cube')
+      }, 500);
+    });
+  }
+
+  function typewriter(selector, speed, txt) {
+    var e = document.querySelector(selector);
+    var promise = new Promise(function (resolve) {
+      var i = 0;
+      e.innerText = "";
+      e.style.opacity = 1;
+
+      var writeText = function () {
+        if (i < txt.length) {
+          e.innerHTML += txt.charAt(i);
+          i++;
+          setTimeout(writeText, speed);
+        }
+        else {
+          resolve();
+        }
+      }
+
+      writeText();
+    });
+
+    return promise;
+  }
+
+  var headers = ["Data Analytics", "Full-stack development", "Data visualisation"];
+
+  function changeSubHeader(i) {
+    if (i >= headers.length || i == null)
+      i = 0;
+
+    switch (i) {
+      case 0:
+        var f = changeToCube
+        break;
+      case 1:
+        var f = changeToStack
+        break;
+      case 2:
+        var f = changeToBar
+        break;
+    }
+
+    f();
+    setTimeout(function () {
+      typewriter(".hero__title--sub", 120, headers[i])
+        .then(function () {
+          setTimeout(function () {
+            i++;
+            changeSubHeader(i);
+          }, transition);
+        });
+    }, 500);
+  }
+
+  changeSubHeader(1);	 
+</script>
+</body>
+
+</html>

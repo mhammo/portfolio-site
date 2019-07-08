@@ -1,0 +1,130 @@
+---
+---
+
+/* Colours */
+
+$color-primary: #00144D;
+$color-grey: #ECECEC;
+$color-dark: #131313;
+
+$color-1: #003FAC;
+$color-2: #00144D;
+$color-3: #006FCF;
+
+@import 'navbar';
+@import 'heroAnim';
+@import 'flex';
+@import 'projects';
+@import 'skillset';
+@import 'code-examples';
+
+/* Typography */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+div {
+  box-sizing: border-box;
+}
+
+
+  html, body {
+    line-height: 1.333333333;
+    background-color: $color-primary;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;;
+    margin: 0;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+.navbar {
+  background: $color-primary;
+  height: 100px;
+  width: 100%;
+  display: flex;
+}
+
+.section {
+  padding: 1em 0 2em 0;
+
+  &.section__hero {
+    width: 100%;
+    margin-top: 0;    
+  }
+  
+  &.section__sectors { 
+    min-height: 800px;
+  }
+}
+
+.section__content {
+  width: 1200px;
+  display: flex;
+  flex-flow: row;
+  margin: 0 auto;
+}
+
+.section__hero {
+  flex-flow: row-reverse;
+}
+
+.section__header {
+  margin: 1em auto;
+}
+
+.section--grey {
+  background: $color-grey;
+}
+.section--white {
+  background: #fff;
+}
+.section--dark {
+  background: $color-dark;
+}
+
+.section--grey,.section--white {
+  color: black;
+
+  .section__header {
+    color: #004F7A;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .section__content {
+    width: auto;
+    margin: 2em 1em;
+  } 
+}
+
+
+@media screen and (max-width: 1200px) {
+  .section__content {
+    width: auto;
+    margin: 2em 1em;
+  } 
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li:before {
+  content: "";
+  border-color: transparent $color-1;
+  border-style: solid;
+  border-width: 0.35em 0 0.35em 0.5em;
+  display: block;
+  height: 0;
+  width: 0;
+  left: -1em;
+  top: 1em;
+  position: relative;
+}

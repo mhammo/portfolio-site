@@ -1,0 +1,134 @@
+
+
+.hero__animation {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;  
+}
+
+.hero__nav {
+  display: inline-flex;
+  flex-flow: row; 
+  flex: 1 1;
+  justify-content: flex-end;
+  align-self: end;
+
+  a {
+    font-weight: bold;
+    margin: 0 1em;
+  }
+}
+
+.hero__header {
+  display: inline-flex;
+  flex-flow: row; 
+  flex: 1 1;
+  justify-content: center;
+  margin: 3em 0 2em 0;
+}
+
+.hero__titles {	 
+  display: flex;	
+  text-align: left;	  
+  font-family: "Open Sans";
+  font-size: 1.4em;
+  flex-flow: column;
+}
+
+.hero__title {
+  white-space: nowrap;
+  margin: .2em auto;
+  letter-spacing: .05em;
+  padding-left: .5em;
+  padding-right: .1em;
+  height: 1.1em;
+
+  &.hero__title--sub {
+    font-size: .9em;
+  }
+}
+
+.hero__title--cursor {
+  border-right: .05em solid white;
+  animation: 
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+}
+
+.hero__scene {
+  width: 80px;
+  height: 80px;
+  padding: 10px;
+}
+
+.hero__anim {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transform-style: preserve-3d;
+  transition: transform 1.5s;      
+}
+
+.hero__anim.cube {      
+  transform: translateZ(-25px) 
+              rotateX( -35deg)
+              rotateY( 45deg);
+}
+
+.hero__section {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transition: all 1.5s;
+}
+
+.hero__section--1  { background: #3D82E9; }
+.hero__section--2   { background: #0B47AE; }
+.hero__section--3   { background: rgb(124, 183, 250); }
+
+.cube {
+  .hero__section--1 { transform: rotateY(  0deg) translateZ(25px); }
+  .hero__section--2 { transform: rotateY(-90deg) translateZ(25px); }
+  .hero__section--3 { transform: rotateX( 90deg) translateZ(25px); }
+
+  &.out {
+    .hero__section {
+      width: 40px;
+      height: 40px;    
+      transition: all .5s;    
+    }
+
+    .hero__section--1 { transform: rotateY(  0deg) translateZ(0px); }
+    .hero__section--2 { transform: rotateY(-90deg) translateZ(40px); }
+    .hero__section--3 { transform: rotateX( 90deg) translateZ(80px); }
+  }
+}
+
+.stack {
+  .hero__section--1 { transform: translateZ(0px) rotate(-45deg) translateY(20%) translateX(-20%); }
+  .hero__section--2 { transform: translateZ(25px) rotate(-45deg) translateY(0%) translateX(0%); }
+  .hero__section--3 { transform: translateZ(50px) rotate(-45deg) translateY(-20%) translateX(20%); }  
+}
+
+.bar {
+  .hero__section--2 { transform: translateZ(0px) translateX(-50%) rotate(0deg) scaleX(0.3); }
+  .hero__section--3 { transform: translateZ(0px) translateX(-10%) translateY(12.5%) rotate(0deg) scaleX(0.3) scaleY(0.75); }
+  .hero__section--1 { transform: translateZ(0px) translateX(30%) translateY(25%) rotate(0deg) scaleX(0.3) scaleY(0.5); }
+  
+  &.out {
+    .hero__section--2 { transform: translateZ(80px) translateX(-75%) translateY(50%) rotate(0deg) scaleX(0.3); }
+    .hero__section--3 { transform: translateZ(-160px) translateX(-10%) translateY(-50%) rotateX( 90deg) scaleX(0.3) scaleY(0.75); }
+    .hero__section--1 { transform: translateZ(240px) translateX(50%) translateY(25%) rotate(0deg) scaleX(0.3) scaleY(0.5); }
+  }
+}

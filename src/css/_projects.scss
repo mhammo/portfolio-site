@@ -1,0 +1,203 @@
+$color-sunburst-1: rgb(31, 153, 58);
+$color-sunburst-2: rgb(12, 122, 173);
+$color-sunburst-3: rgb(105, 36, 161);
+$color-sunburst-4: rgb(45, 182, 152);
+$color-sunburst-5: rgb(182, 95, 45);
+
+a.flexbox:hover {
+  text-decoration: none;
+}
+
+.project {
+  padding: 1em;
+  flex: 1 1 0;  
+  transition: all .3s;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;  
+  color: #fff;
+  box-sizing: border-box;
+  min-height: 320px;
+
+  &:hover {
+    .project__image--hover {
+      opacity: 1;
+    }
+  }
+
+  &.project--green {
+    background: $color-1;
+    border: $color-1 solid 0em;
+    &:hover {
+      background: $color-dark;
+      border: $color-1 solid 1.5em;
+    }
+  }
+
+  &.project--blue {
+    background: #011E71;
+    border: #011E71 solid 0em;
+    &:hover {
+      background: $color-dark;
+      border-width: 1.5em;
+    }
+  }
+
+  &.project--purple {
+    background: $color-3;
+    border: $color-3 solid 0em;
+    &:hover {
+      background: $color-dark;
+      border: $color-3 solid 1.5em;
+    }
+  }
+}
+
+.project__image_container {
+  height: 90px;
+  margin: 2em 0;
+  width: 100%;
+  position: relative;
+}
+
+.project__image_wrapper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.project__image {
+  height: 100%;
+  width: auto;
+  margin: 0 auto;
+  display: flex;
+}
+
+.project__image--hover {
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.project__subheader {
+  align-self: center;
+  margin: 0 auto;
+  letter-spacing: .2em;
+}
+
+.project__skillset {
+  color: white; 
+  font-weight: bold;
+  align-self: center;
+  margin-top:2em;
+}
+
+.project__sunburst__section {
+  fill: none;
+  stroke-width: 1;
+  stroke: white;  
+  transition: all .3s;
+}
+
+.project__sunburst__svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.project__sunburst__box {
+  position: relative;
+  margin: 2em auto;
+}
+
+.project__sunburst {
+  &:hover {    
+
+    .project__sunburst__section--green {
+      stroke: $color-sunburst-1;
+    }
+    .project__sunburst__section--blue {
+      stroke: $color-sunburst-2;
+    }
+    .project__sunburst__section--purple {
+      stroke: $color-sunburst-3;
+    }
+    .project__sunburst__section--turquoise {
+      stroke: $color-sunburst-4;
+    }
+    .project__sunburst__section--orange {
+      stroke: $color-sunburst-5;
+    }
+  }
+}
+
+.project__logo--erasmus {
+  width: 430px;
+  height: 60px;
+  align-self: center;
+  margin: 0 auto;  
+}
+
+@media screen and (max-width: 1200px) {
+  .project__logo--erasmus {
+    width: 350px;
+    height: 45px;
+  } 
+}
+
+@media screen and (max-width: 760px) {
+  .project__logo--erasmus {
+    width: 260px;
+    height: 35px;
+  } 
+
+  .project__sunburst__box {
+    display: none;
+  }
+
+  .project--sunburst {
+    min-height: 500px;
+  }
+}
+
+.project__logo--golab {
+  margin: 2em auto;
+  width: 400px;
+  height: 90px;
+}
+
+.project__logo__golab__text {
+  fill: white;
+}
+
+.project__logo__golab__text--alt {
+  transition: fill 0.3s;
+}
+
+.project__link {
+  border: 2px #153EB0 solid;
+  font-size: 1.2em;
+  margin: .5em 0;
+  color:#153EB0;
+  padding: .4em;
+  margin-right: auto;
+  transition: all .2s;
+  fill: none;
+  stroke: blue;
+}
+
+.project__link:hover {
+  background: #153EB0;
+  color: white;
+  text-decoration: none;
+  fill: none;
+  stroke: white;
+}
+
+.project__link_arrow {
+  margin-left: 5px;
+  width: .8em;
+  height: .8em;
+}
