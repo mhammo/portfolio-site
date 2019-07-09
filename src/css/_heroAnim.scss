@@ -1,5 +1,4 @@
 
-
 .hero__animation {
   flex: 1 1;
   display: flex;
@@ -46,6 +45,24 @@
   &.hero__title--sub {
     font-size: .9em;
   }
+}
+
+@media screen and (max-width: 550px) {
+  .hero__header {
+    margin: 2em 0 0 0;
+  }
+
+  .hero__nav {
+      display: none;
+  }
+
+  .hero__title {
+    font-size: 1.2em;
+
+    &.hero__title--sub {
+      font-size: .7em
+    }
+  }  
 }
 
 .hero__title--cursor {

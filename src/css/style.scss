@@ -40,6 +40,7 @@ div {
     text-decoration: none;
 
     &:hover {
+      color: lighten($color-1, 40);
       text-decoration: underline;
     }
   }
@@ -79,12 +80,31 @@ div {
   margin: 1em auto;
 }
 
+.section.section__footer {
+  padding: 3em 0;
+}
+
+.footer__header {
+  font-size: 1em;
+  margin: .5em auto;
+}
+
 .section--grey {
   background: $color-grey;
 }
 .section--white {
-  background: #fff;
+  background: #fff;  
 }
+
+.section--white,.section--grey {
+  a {
+    color: $color-1;
+    &:hover {
+      color: lighten($color-1, 20);
+    }
+  }
+}
+
 .section--dark {
   background: $color-dark;
 }
@@ -127,4 +147,19 @@ ul li:before {
   left: -1em;
   top: 1em;
   position: relative;
+}
+
+.logo__github {
+  width: 32;
+  height: 32;
+  margin-right: 12;
+}
+
+.section__aboutme {
+  padding: 2em 0;
+  font-size: 1.2em;
+}
+
+.text--center {
+  text-align: center;
 }

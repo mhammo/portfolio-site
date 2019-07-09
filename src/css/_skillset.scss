@@ -33,10 +33,14 @@
   width: 100%;
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 556px) {
   .skillset--database {
     flex: 2 1;
   } 
+
+  .skillset__skill--database {
+    width: 50%;
+  }
 }
 
 .skillset__skill__content {
@@ -53,26 +57,27 @@
   font-weight: bold;
 }
 
-@media screen and (max-width: 880px) {
-  .skillset {
-    flex: 2 1;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
+@media screen and (max-width: 760px) {
+  .skillset__skill {
+    font-size: .9em;    
+  }
+
+  .skillset__skill__content {
+    border: white solid 1px;
   }
 
   .skillset__skill--frontend {
-    width: auto;
+    width: 50%;
     flex: 0 1 auto;
   }
   
   .skillset__skill--backend {
-    width: auto;
+    width: 50%;
     flex: 0 1 auto;
   }  
 
   .skillset__skill--database {
-    width: auto;
+    width: 50%;
     flex: 0 1 auto;
   }
 }

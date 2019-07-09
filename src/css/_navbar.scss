@@ -1,3 +1,9 @@
+@media screen and (max-width: 550px) {
+    .menu--navbar {
+        display: none;
+    }
+}
+
 .menu--navbar {
     z-index: 104;
     position: absolute;

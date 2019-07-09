@@ -21,6 +21,8 @@ a.flexbox:hover {
   min-height: 320px;
 
   &:hover {
+    background: $color-dark !important;
+    border-width: 1.5em !important;
     .project__image--hover {
       opacity: 1;
     }
@@ -29,28 +31,16 @@ a.flexbox:hover {
   &.project--green {
     background: $color-1;
     border: $color-1 solid 0em;
-    &:hover {
-      background: $color-dark;
-      border: $color-1 solid 1.5em;
-    }
   }
 
   &.project--blue {
     background: #011E71;
     border: #011E71 solid 0em;
-    &:hover {
-      background: $color-dark;
-      border-width: 1.5em;
-    }
   }
 
   &.project--purple {
     background: $color-3;
     border: $color-3 solid 0em;
-    &:hover {
-      background: $color-dark;
-      border: $color-3 solid 1.5em;
-    }
   }
 }
 
@@ -83,6 +73,7 @@ a.flexbox:hover {
   align-self: center;
   margin: 0 auto;
   letter-spacing: .2em;
+  text-align: center;
 }
 
 .project__skillset {
@@ -110,6 +101,7 @@ a.flexbox:hover {
 .project__sunburst__box {
   position: relative;
   margin: 2em auto;
+  width: 100%;
 }
 
 .project__sunburst {
@@ -149,8 +141,7 @@ a.flexbox:hover {
 
 @media screen and (max-width: 760px) {
   .project__logo--erasmus {
-    width: 260px;
-    height: 35px;
+    margin: 60px auto 20px auto;
   } 
 
   .project__sunburst__box {
@@ -159,6 +150,23 @@ a.flexbox:hover {
 
   .project--sunburst {
     min-height: 500px;
+  }
+
+  .project {
+    &:hover {
+      border: none;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .project__logo--erasmus {
+    width: 250px;
+    height: auto;
+  } 
+
+  .project__skillset {
+    font-size: .8em;
   }
 }
 
@@ -194,6 +202,10 @@ a.flexbox:hover {
   text-decoration: none;
   fill: none;
   stroke: white;
+
+  span {
+    color: white;
+  }
 }
 
 .project__link_arrow {
