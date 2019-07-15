@@ -26,7 +26,8 @@
   align-items: center;
   justify-content: center;
   width: 50%;
-  padding: 10px  
+  padding: 10px;
+  text-align: center;   
 }
 
 .skillset__skill--database {
@@ -105,7 +106,8 @@ $skillset-hover-border: $color-primary solid 1px;
 }
 
 .skillset__skill:hover {
-  font-weight: bold;
+  font-weight: bold; 
+
   .skillset__border--top-left {
     border-left: $skillset-hover-border;
     border-top: $skillset-hover-border;

@@ -11,15 +11,14 @@ categories: javascript d3 drupal php
 
 #### Goals
 -	The client wanted a data visualisation to show the outputs and outcomes of the Erasmus+ EU funding programme
--	The data visualisation has to be integrated into a Drupal CMS
--	The data visualisation content had to be editable in the CMS
+-	The data visualisation has to be integrated into and editable within a Drupal CMS
 -	The data visualisation needed to be mobile friendly
 -	When you click on a section of the sunburst, it should load in content relevant to the clicked section
 
 #### Proposed Solution
 -	Create a sunburst data visualisation using D3
--	Create a JSON sunburst dataset using a custom Drupal database query, building it using nested taxonomies and a custom content type.
--	The sunburst sections are represented with taxonomies, and the content type listed under that taxonomy is what appears underneath the sunburst on click
+-	Create the sunburst dataset using a custom Drupal database query
+-	The sunburst sections are represented with taxonomies, and the content type tagged with that taxonomy is what appears underneath the sunburst upon click
 -	The sunburst code is built using ES6, webpack and babel to enable quick clean development code, which can be compiled into cross-browser-compatible JS
 
 #### Result
@@ -32,7 +31,7 @@ categories: javascript d3 drupal php
   </svg>
 </a>
 {:/}  
--	The client and their stakeholders were very happy with the data visualisation
+-	The client and their stakeholders were very happy with the data visualisation!
 -	The website content editors were able to easily understand how to edit the sunburst content
 -	The content is highly customisable in the CMS, down to even the sunburst section colors
 </div>
