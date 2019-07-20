@@ -26,7 +26,7 @@ categories: powerbi nodejs mongodb javascript
 #### Result
 {::nomarkdown}  
 <a class="project__link" href="https://github.com/mhammo/powerbi-powerpoint-service" markdown="1">
-  <span>See the github repository here</span>
+  <span>See the github repo here</span>
   <svg class="project__link_arrow" viewBox="0 0 13.5 12.2">
     <path d="M7.5 12.2l-.7-.7 5.3-5.4L6.8.7l.7-.7 6 6.1"></path>
     <path opacity="0.5" d="M0 5.6h12.4v1H0z"></path>

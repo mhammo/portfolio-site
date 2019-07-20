@@ -10,7 +10,6 @@
   flex-flow: row; 
   flex: 1 1;
   justify-content: flex-end;
-  align-self: end;
 
   a {
     font-weight: bold;
@@ -18,13 +17,21 @@
   }
 }
 
-.hero__header {
+a.hero__header  {
   display: inline-flex;
   flex-flow: row; 
   flex: 1 1;
   justify-content: center;
   margin: 3em 0 2em 0;
+
+  &:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+  
 }
+
+
 
 .hero__titles {	 
   display: flex;	

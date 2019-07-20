@@ -1,17 +1,8 @@
 ---
 ---
 
-/* Colours */
-
-$color-primary: #00144D;
-$color-grey: #ECECEC;
-$color-dark: #131313;
-
-$color-1: #003FAC;
-$color-2: #00144D;
-$color-3: #006FCF;
-
-@import 'navbar';
+@import 'variables';
+@import 'type';
 @import 'heroAnim';
 @import 'flex';
 @import 'projects';
@@ -20,7 +11,6 @@ $color-3: #006FCF;
 
 /* Typography */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-
 
 div {
   box-sizing: border-box;
@@ -87,6 +77,8 @@ div {
 .footer__header {
   font-size: 1em;
   margin: .5em auto;
+  display: inline-flex;
+  align-items: center;
 }
 
 .section--grey {
@@ -154,4 +146,13 @@ ul li:before {
 
 .text--center {
   text-align: center;
+}
+
+pre {
+  background: #efefef;
+  margin: 15px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  font-family: "Bitstream Vera Sans Mono",Consolas,monospace;
+  overflow-x: scroll;
 }
